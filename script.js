@@ -1,10 +1,10 @@
 function openModal(imageSrc) {
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage');
-    
+
     modal.style.display = 'flex';
     modalImg.src = imageSrc;
-    
+
     // Prevent body scrolling when modal is open
     document.body.style.overflow = 'hidden';
 }
@@ -12,7 +12,7 @@ function openModal(imageSrc) {
 function closeModal() {
     const modal = document.getElementById('imageModal');
     modal.style.display = 'none';
-    
+
     // Re-enable body scrolling
     document.body.style.overflow = 'auto';
 }
@@ -22,4 +22,21 @@ document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
         closeModal();
     }
+});
+
+// Smooth scroll behavior for the page
+document.addEventListener('DOMContentLoaded', function() {
+    // Add smooth scrolling to all links (if you add navigation later)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
 });
