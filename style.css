@@ -40,6 +40,59 @@ h1 {
     text-transform: uppercase;
 }
 
+/* About Me & Skills Sections */
+.about-me,
+.skills-experience {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 40px;
+    margin-bottom: 50px;
+    transition: border-color 0.3s ease;
+}
+
+.about-me:hover,
+.skills-experience:hover {
+    border-color: #667eea;
+}
+
+.about-me h2,
+.skills-experience h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #667eea;
+    font-weight: 600;
+}
+
+.about-me p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #ccc;
+}
+
+.skills-experience ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.skills-experience li {
+    padding: 12px 20px;
+    background: #0f0f0f;
+    border-radius: 8px;
+    color: #ddd;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.skills-experience li:hover {
+    background: #1f1f1f;
+    transform: translateX(5px);
+}
+
+/* Gallery Styles */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -92,6 +145,7 @@ h1 {
     background: #1a1a1a;
 }
 
+/* Modal Styles */
 .modal {
     display: none;
     position: fixed;
@@ -132,6 +186,7 @@ h1 {
     color: #667eea;
 }
 
+/* Category Styles */
 .category {
     margin-bottom: 50px;
 }
@@ -145,6 +200,7 @@ h1 {
     border-bottom: 2px solid #2a2a2a;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
     h1 {
         font-size: 2em;
@@ -156,5 +212,19 @@ h1 {
     
     body {
         padding: 30px 15px;
+    }
+
+    .about-me,
+    .skills-experience {
+        padding: 25px;
+    }
+
+    .about-me h2,
+    .skills-experience h2 {
+        font-size: 1.5em;
+    }
+
+    .skills-experience ul {
+        grid-template-columns: 1fr;
     }
 }
